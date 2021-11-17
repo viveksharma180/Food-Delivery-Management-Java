@@ -1,3 +1,44 @@
-{
-    "name": "viveksharma"
-}
+[
+  {
+    "customerName": "Siddhant Joshi",
+    "customerAddress": "1921 Mission Main Boston MA  02120",
+    "customerContact": 8691916497,
+    "customerUsername": "siddhantbokil",
+    "customerPassword": "sidrocks"
+  },
+  {
+    "customerName": "Shruti Bhoir",
+    "customerAddress": "1632 Mission Hill, Boston, MA - 02120",
+    "customerContact": 9819580925,
+    "customerUsername": "shruti",
+    "customerPassword": "shrutirocks"
+  },
+  {
+    "customerName": "Himanshu Rathod",
+    "customerAddress": "109 Fenway Park, Boston, MA - 02120",
+    "customerContact": 8573768611,
+    "customerUsername": "himanshu",
+    "customerPassword": "himanshurocks"
+  },
+  {
+    "customerName": "Vibhi",
+    "customerAddress": "712 Calmen Street Boston MA 02120",
+    "customerContact": 2222222222,
+    "customerUsername": "vibhi",
+    "customerPassword": "vibhirocks"
+  },
+  {
+    "customerName": "viveksharmaamesh Sahasrabuuddhe",
+    "customerAddress": "11, Bhagyashree Society, Boston, MA - 02120",
+    "customerContact": 8657298290,
+    "customerUsername": "pms",
+    "customerPassword": "pmsrocks"
+  },
+  {
+    "customerName": "Vivek",
+    "customerAddress": "1575 Tremont",
+    "customerContact": 9897731487,
+    "customerUsername": "vivek",
+    "customerPassword": "sharma"
+  }
+]

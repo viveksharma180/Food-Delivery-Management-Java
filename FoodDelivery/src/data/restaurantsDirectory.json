@@ -1,3 +1,50 @@
-{
-    "name": "viveksharma"
-}
+[
+  {
+    "restaurantName": "McDonalds",
+    "restaurantAddress": "899 Boylston Street, Boston, MA - 02142",
+    "restaurantNumber": 9819449365,
+    "restaurantCuisine": "Fast food",
+    "restaurantUsername": "mcd",
+    "restaurantPassword": "mcdrocks"
+  },
+  {
+    "restaurantName": "Dunkin Donuts",
+    "restaurantAddress": "333 Huntington Avenue, Boston, MA - 02123",
+    "restaurantNumber": 7045001561,
+    "restaurantCuisine": "Cafe",
+    "restaurantUsername": "dunkin",
+    "restaurantPassword": "dunkinrocks"
+  },
+  {
+    "restaurantName": "Chinese Corner",
+    "restaurantAddress": "142 Newbury Street, Boston, MA - 01291",
+    "restaurantNumber": 7738042544,
+    "restaurantCuisine": "Chinese",
+    "restaurantUsername": "cc",
+    "restaurantPassword": "ccrocks"
+  },
+  {
+    "restaurantName": "Popeye",
+    "restaurantAddress": "366 Huntington Avenue, Boston, MA 02120",
+    "restaurantNumber": 9702838033,
+    "restaurantCuisine": "Fast food",
+    "restaurantUsername": "popeye",
+    "restaurantPassword": "popeyerocks"
+  },
+  {
+    "restaurantName": "Milk Weed",
+    "restaurantAddress": "1245 Tremont Street, Boston, MA - 02120",
+    "restaurantNumber": 9897731487,
+    "restaurantCuisine": "Indian",
+    "restaurantUsername": "milkweed",
+    "restaurantPassword": "milkrocks"
+  },
+  {
+    "restaurantName": "stopandshop",
+    "restaurantAddress": "tremont street",
+    "restaurantNumber": 8572694323,
+    "restaurantCuisine": "everything",
+    "restaurantUsername": "stop",
+    "restaurantPassword": "shop"
+  }
+]

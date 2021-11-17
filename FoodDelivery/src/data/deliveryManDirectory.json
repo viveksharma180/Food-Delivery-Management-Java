@@ -1,3 +1,50 @@
-{
-    "name": "viveksharma"
-}
+[
+  {
+    "deliveryManName": "Thomas Pinto",
+    "deliveryManAddress": "800 Huntington Avenue, Boston, MA - 02122",
+    "deliveryManContact": 987654321,
+    "deliveryManUsername": "thomaspinto",
+    "deliveryManPassword": "thomasrocks",
+    "available": false
+  },
+  {
+    "deliveryManName": "Siddhant Pardhe",
+    "deliveryManAddress": "103 Newbury Street, Boston, MA - 01509",
+    "deliveryManContact": 1234567890,
+    "deliveryManUsername": "sidpardhe",
+    "deliveryManPassword": "sidrocks",
+    "available": false
+  },
+  {
+    "deliveryManName": "Atharva Awale",
+    "deliveryManAddress": "1366 Roxbury Crossing Boston MA 02124",
+    "deliveryManContact": 8657298290,
+    "deliveryManUsername": "athuawale",
+    "deliveryManPassword": "atharvarocks",
+    "available": true
+  },
+  {
+    "deliveryManName": "Tanvi Hule",
+    "deliveryManAddress": "193 Boylston Street Boston MA 02120",
+    "deliveryManContact": 9999999999,
+    "deliveryManUsername": "tanvihule",
+    "deliveryManPassword": "tanvirocks",
+    "available": true
+  },
+  {
+    "deliveryManName": "Mithul Raut",
+    "deliveryManAddress": "123 Boylston Street, Boston, MA - 02120",
+    "deliveryManContact": 9090909090,
+    "deliveryManUsername": "mithul",
+    "deliveryManPassword": "mithulrocks",
+    "available": true
+  },
+  {
+    "deliveryManName": "huehuehue",
+    "deliveryManAddress": "aksjdashd",
+    "deliveryManContact": 1231312312312,
+    "deliveryManUsername": "huehue",
+    "deliveryManPassword": "huehue",
+    "available": true
+  }
+]

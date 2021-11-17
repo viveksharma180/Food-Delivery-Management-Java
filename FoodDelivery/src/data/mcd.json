@@ -1,0 +1,12 @@
+[
+  {
+    "dishName": "Veggie Burger",
+    "dishSummary": "Vegan",
+    "dishPrice": 1.99
+  },
+  {
+    "dishName": "Coke",
+    "dishSummary": "Soft Drinks",
+    "dishPrice": 0.99
+  }
+]
