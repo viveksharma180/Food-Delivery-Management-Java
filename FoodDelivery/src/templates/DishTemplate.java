@@ -52,6 +52,12 @@ public class DishTemplate {
         this.dishPrice = dishPrice;
         this.dishCuisine = dishCuisine;
     }
+    
+    public DishTemplate(String dishName, String dishSummary, double dishPrice) {
+        this.dishName = dishName;
+        this.dishSummary = dishSummary;
+        this.dishPrice = dishPrice;
+    }
 
     @Override
     public String toString() {
