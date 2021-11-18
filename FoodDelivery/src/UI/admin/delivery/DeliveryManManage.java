@@ -26,6 +26,7 @@ public class DeliveryManManage extends javax.swing.JFrame {
     private int index = -1;
     
     public DeliveryManManage() {
+        this.deliveryman = DB4OUtils.readDeliveryMan();
         initComponents();
     }
 

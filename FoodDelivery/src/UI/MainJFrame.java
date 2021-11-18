@@ -21,8 +21,8 @@ import templates.RestaurantTemplate;
  */
 public class MainJFrame extends javax.swing.JFrame {
 
-    private String usernameAdmin = "admin";
-     private String passwordAdmin = "admin123";
+    private String adminUser = "vivek";
+     private String adminPass = "sharma";
      private ArrayList<RestaurantTemplate> restaurant = DB4OUtils.readRestaurants();
      private ArrayList<DeliveryManTemplate> deliveryMan = DB4OUtils.readDeliveryMan();
      private ArrayList<CustomerTemplate> customer = DB4OUtils.readCustomer();
@@ -51,8 +51,8 @@ public class MainJFrame extends javax.swing.JFrame {
         lblUserName = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
         txtUserName = new javax.swing.JTextField();
-        txtPassword = new javax.swing.JTextField();
         btnLogin = new javax.swing.JButton();
+        txtPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -129,9 +129,9 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addComponent(lblUserName)
                     .addComponent(lblPassword))
                 .addGap(134, 134, 134)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtUserName, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
+                    .addComponent(txtPassword))
                 .addContainerGap(53, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -148,8 +148,8 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGap(61, 61, 61)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPassword)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(76, 76, 76)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(78, 78, 78)
                 .addComponent(btnLogin)
                 .addContainerGap(103, Short.MAX_VALUE))
         );
@@ -239,7 +239,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         }
         
-        if (usernameAdmin.equals(username) && passwordAdmin.equals(password)) {
+        if (adminUser.equals(username) && adminPass.equals(password)) {
             super.dispose();
             AdminMainDashboard adminDash = new AdminMainDashboard();
             adminDash.setVisible(true);
@@ -294,7 +294,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUserName;
-    private javax.swing.JTextField txtPassword;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
 }

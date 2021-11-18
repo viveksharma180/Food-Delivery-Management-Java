@@ -6,5 +6,19 @@
     "restaurantCuisine": "Bakery",
     "restaurantUsername": "subway",
     "restaurantPassword": "subway"
+  },
+  {
+    "restaurantName": "Stop and Shop",
+    "restaurantAddress": "Tremont Street",
+    "restaurantNumber": 987654321,
+    "restaurantUsername": "stop",
+    "restaurantPassword": "shop"
+  },
+  {
+    "restaurantName": "Tremont Pizza",
+    "restaurantAddress": "Tremont Street",
+    "restaurantNumber": 1234567123,
+    "restaurantUsername": "tremont",
+    "restaurantPassword": "pizza"
   }
 ]

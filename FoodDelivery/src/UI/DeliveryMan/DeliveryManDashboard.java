@@ -356,6 +356,18 @@ public class DeliveryManDashboard extends javax.swing.JFrame {
 
     private void btndeliveredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeliveredActionPerformed
         // TODO add your handling code here:
+        ArrayList<DeliveryManTemplate> deliveryMan = DB4OUtils.readDeliveryMan();
+        for (int i = 0; i < deliveryMan.size(); i++) {
+            if (deliveryMan.get(i).getDeliveryManUsername().equals(dm.getDeliveryManUsername())) {
+                deliveryMan.get(i).setAvailable(true);
+                break;
+            }
+        }
+        DB4OUtils.writeDeliveryMan(deliveryMan);
+        JOptionPane.showMessageDialog(this, "Order Delivered! " + newOrder.get(0).getCustomer().getCustomerName());
+//        super.dispose();
+//        AppDashboard ad = new AppDashboard();
+//        ad.setVisible(true);
     }//GEN-LAST:event_btndeliveredActionPerformed
 
     /**

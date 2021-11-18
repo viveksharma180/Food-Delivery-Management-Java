@@ -162,7 +162,7 @@ public class DB4OUtils {
     
     public static ArrayList<OrderTemplate> readDeliveryOrder(String deliveryManName) {
         Gson g = new Gson();
-        String fileName = "src/data/deliveryman/" + deliveryManName + "_order.json";
+        String fileName = "src/dataDelivery/" + deliveryManName + "_order.json";
         String json = DB4OUtils.readFile(fileName);
         if (json == null) {
             return new ArrayList<OrderTemplate>();
@@ -173,7 +173,7 @@ public class DB4OUtils {
     
     public static void writeDeliveryOrder(ArrayList<OrderTemplate> order, String deliveryManName) {
         Gson g = new GsonBuilder().setPrettyPrinting().create();
-        String fileName = "src/data/deliveryman/" + deliveryManName + "_order.json";
+        String fileName = "src/dataDelivery/" + deliveryManName + "_order.json";
         writeFile(fileName, g.toJson(order));
     }
     

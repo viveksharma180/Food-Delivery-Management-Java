@@ -409,26 +409,26 @@ public class RestaurantManage extends javax.swing.JFrame {
 
     private void btnUpdateRestaurantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateRestaurantActionPerformed
         // TODO add your handling code here:
-        if (!DB4OUtils.validateName(txtRestaurantName.getText())) {
-            JOptionPane.showMessageDialog(this, "Please enter a valid restaurant name.");
-            return;
-        }
-        if (!DB4OUtils.validateNameNumber(txtRestaurantAddress.getText())) {
-            JOptionPane.showMessageDialog(this, "Please enter a valid restaurant address.");
-            return;
-        }
-        if (!DB4OUtils.validateNumber(txtRestaurantPhone.getText())) {
-            JOptionPane.showMessageDialog(this, "Please enter a valid restaurant contact.");
-            return;
-        }
-        if (!DB4OUtils.validateNameNumber(txtUserName.getText())) {
-            JOptionPane.showMessageDialog(this, "Please enter a valid restaurant username.");
-            return;
-        }
-        if (!DB4OUtils.validateNameNumber(txtPassword.getText())) {
-            JOptionPane.showMessageDialog(this, "Please enter a valid restaurant password.");
-            return;
-        }
+//        if (!DB4OUtils.validateName(txtRestaurantName.getText())) {
+//            JOptionPane.showMessageDialog(this, "Please enter a valid restaurant name.");
+//            return;
+//        }
+//        if (!DB4OUtils.validateNameNumber(txtRestaurantAddress.getText())) {
+//            JOptionPane.showMessageDialog(this, "Please enter a valid restaurant address.");
+//            return;
+//        }
+//        if (!DB4OUtils.validateNumber(txtRestaurantPhone.getText())) {
+//            JOptionPane.showMessageDialog(this, "Please enter a valid restaurant contact.");
+//            return;
+//        }
+//        if (!DB4OUtils.validateNameNumber(txtUserName.getText())) {
+//            JOptionPane.showMessageDialog(this, "Please enter a valid restaurant username.");
+//            return;
+//        }
+//        if (!DB4OUtils.validateNameNumber(txtPassword.getText())) {
+//            JOptionPane.showMessageDialog(this, "Please enter a valid restaurant password.");
+//            return;
+//        }
         
         if (index != -1) {
             RestaurantTemplate p = restaurant.get(index);

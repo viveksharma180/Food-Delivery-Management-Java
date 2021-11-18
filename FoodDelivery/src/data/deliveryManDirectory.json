@@ -5,7 +5,7 @@
     "deliveryManContact": 7658927686,
     "deliveryManUsername": "rihsabh",
     "deliveryManPassword": "kauhsik",
-    "available": true
+    "available": false
   },
   {
     "deliveryManName": "Arshabh Semwal",
@@ -21,6 +21,22 @@
     "deliveryManContact": 8979012349,
     "deliveryManUsername": "shubham",
     "deliveryManPassword": "mittal",
+    "available": false
+  },
+  {
+    "deliveryManName": "Rohit Chouhan",
+    "deliveryManAddress": "Tremont Street",
+    "deliveryManContact": 8787878787,
+    "deliveryManUsername": "rohitC",
+    "deliveryManPassword": "chouhanR",
+    "available": true
+  },
+  {
+    "deliveryManName": "Sprika Gaur",
+    "deliveryManAddress": "Boston",
+    "deliveryManContact": 654987321,
+    "deliveryManUsername": "sprika",
+    "deliveryManPassword": "gaur",
     "available": true
   }
 ]

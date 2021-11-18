@@ -1,0 +1,12 @@
+[
+  {
+    "dishName": "Veggie Pizza",
+    "dishSummary": "Vegan",
+    "dishPrice": 7.99
+  },
+  {
+    "dishName": "Pork Pizza",
+    "dishSummary": "Non veg",
+    "dishPrice": 7.49
+  }
+]

@@ -25,6 +25,7 @@ public class CustomerManage extends javax.swing.JFrame {
     private int index = -1;
     
     public CustomerManage() {
+        this.customer = DB4OUtils.readCustomer();
         initComponents();
     }
 
@@ -425,29 +426,38 @@ public class CustomerManage extends javax.swing.JFrame {
     private void btnUpdateCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateCustomerActionPerformed
         // TODO add your handling code here:
 
-        if (!DB4OUtils.validateNumber(txtSearchCustomer.getText()) || txtSearchCustomer.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Please enter a valid contact number.");
+        if (!DB4OUtils.validateName(txtCustomerName.getText())) {
+            JOptionPane.showMessageDialog(this, "Enter a name.");
             return;
         }
-        
-        long searchNumber = Long.parseLong(txtSearchCustomer.getText());
-        DateFormat dateFormat = new SimpleDateFormat("YYYY-MM-DD");
-        for (int i = 0; i < customer.size(); i++) {
-            if (customer.get(i).getCustomerContact() == searchNumber) {
-                index = i;
-                break;
-            }
+        if (!DB4OUtils.validateNumber(txtCustomerPhone.getText()) || txtCustomerPhone.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Enter a phone numbet!.");
+            return;
+        }
+        if (!DB4OUtils.validateNameNumber(txtCustomerAddress.getText())) {
+            JOptionPane.showMessageDialog(this, "Enter a address.");
+            return;
+        }
+        if (!DB4OUtils.validateName(txtUserName.getText())) {
+            JOptionPane.showMessageDialog(this, "Enter a username.");
+            return;
+        }
+        if (!DB4OUtils.validateNameNumber(txtPassword.getText())) {
+            JOptionPane.showMessageDialog(this, "Enter a password.");
+            return;
         }
         if (index == -1) {
-            JOptionPane.showMessageDialog(this, "Customer Not Found!");
-        } else {
             CustomerTemplate p = customer.get(index);
             txtCustomerName.setText(p.getCustomerName());
             txtCustomerPhone.setText(p.getCustomerContact() + "");
             txtCustomerAddress.setText(p.getCustomerAddress());
             txtUserName.setText(p.getCustomerUsername());
             txtPassword.setText(p.getCustomerPassword());
-            JOptionPane.showMessageDialog(this, "Fetched details of " + p.getCustomerName());
+            ArrayList<CustomerTemplate> customers = DB4OUtils.readCustomer();
+            System.out.println(customers.toString());
+            customer.set(index,p);
+            DB4OUtils.writeCustomer(customer);
+            JOptionPane.showMessageDialog(this, "Updated succesfully!");
 //            updateCustomerPanel.setVisible(true);
         }
         

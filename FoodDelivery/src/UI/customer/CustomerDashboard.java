@@ -409,7 +409,7 @@ public class CustomerDashboard extends javax.swing.JFrame {
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
         if (!DB4OUtils.validateName(txtSearch.getText()) || txtSearch.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Please enter a valid dish name.");
+            JOptionPane.showMessageDialog(this, "Enter valid name!");
             return;
         }
 
@@ -553,7 +553,6 @@ public class CustomerDashboard extends javax.swing.JFrame {
 
         DefaultTableCellRenderer renderer = (DefaultTableCellRenderer) tblMenu.getTableHeader().getDefaultRenderer();
         renderer.setHorizontalAlignment(0);
-        DateFormat dateFormat = new SimpleDateFormat("MM/dd HH:mm");
 
         for (int x = 0; x < tblMenu.getColumnCount(); x++) {
             tblMenu.getColumnModel().getColumn(x).setCellRenderer(centerRenderer);
@@ -564,7 +563,6 @@ public class CustomerDashboard extends javax.swing.JFrame {
             row[0] = dish.getDishName();
             row[1] = dish.getDishSummary();
             row[2] = dish.getDishPrice() + "$";
-            row[3] = dish.getDishCuisine();
             dtm.addRow(row);
         }
     }

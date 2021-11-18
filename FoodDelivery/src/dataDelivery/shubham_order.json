@@ -1,0 +1,23 @@
+[
+  {
+    "dish": {
+      "dishName": "Pork Pizza",
+      "dishSummary": "Non veg",
+      "dishPrice": 7.49
+    },
+    "restaurant": {
+      "restaurantName": "Tremont Pizza",
+      "restaurantAddress": "Tremont Street",
+      "restaurantNumber": 1234567123,
+      "restaurantUsername": "tremont",
+      "restaurantPassword": "pizza"
+    },
+    "customer": {
+      "customerName": "Vasu Maheshwari",
+      "customerAddress": "810 Tremont Street Boston MA",
+      "customerContact": 123456789,
+      "customerUsername": "vasu",
+      "customerPassword": "maheshwari"
+    }
+  }
+]

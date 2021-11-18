@@ -13,5 +13,15 @@
     "dishName": "Bread",
     "dishSummary": "Bakery",
     "dishPrice": 1.99
+  },
+  {
+    "dishName": "Bread",
+    "dishSummary": "Bakery",
+    "dishPrice": 1.99
+  },
+  {
+    "dishName": "Jam",
+    "dishSummary": "Bakery",
+    "dishPrice": 1.0
   }
 ]

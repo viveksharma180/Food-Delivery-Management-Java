@@ -14,13 +14,6 @@
     "customerPassword": "maheshwari"
   },
   {
-    "customerName": "Sahil Bhanot",
-    "customerAddress": "810 Tremont Street Boston MA",
-    "customerContact": 987654321,
-    "customerUsername": "sahil",
-    "customerPassword": "bhanot"
-  },
-  {
     "customerName": "Rohit Chouhan",
     "customerAddress": "810 Tremont Street Boston MA",
     "customerContact": 192837465,
@@ -35,10 +28,10 @@
     "customerPassword": "popat"
   },
   {
-    "customerName": "Vivek Sharma",
-    "customerAddress": "810 Tremont Street Boston MA",
-    "customerContact": 9897731487,
-    "customerUsername": "vivek",
-    "customerPassword": "sharma"
+    "customerName": "Sahil Bhanot",
+    "customerAddress": "Boston",
+    "customerContact": 987654321,
+    "customerUsername": "sahil",
+    "customerPassword": "bhanot"
   }
 ]
