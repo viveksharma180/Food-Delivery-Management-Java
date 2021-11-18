@@ -1,42 +1,42 @@
 [
   {
-    "customerName": "Siddhant Joshi",
-    "customerAddress": "1921 Mission Main Boston MA  02120",
-    "customerContact": 8691916497,
-    "customerUsername": "siddhantbokil",
-    "customerPassword": "sidrocks"
+    "customerName": "Raghav Kandpal",
+    "customerAddress": "810 Tremont Street Boston MA",
+    "customerContact": 9897731487,
+    "customerUsername": "raghav",
+    "customerPassword": "kandpal"
   },
   {
-    "customerName": "Shruti Bhoir",
-    "customerAddress": "1632 Mission Hill, Boston, MA - 02120",
-    "customerContact": 9819580925,
-    "customerUsername": "shruti",
-    "customerPassword": "shrutirocks"
+    "customerName": "Vasu Maheshwari",
+    "customerAddress": "810 Tremont Street Boston MA",
+    "customerContact": 123456789,
+    "customerUsername": "vasu",
+    "customerPassword": "maheshwari"
   },
   {
-    "customerName": "Himanshu Rathod",
-    "customerAddress": "109 Fenway Park, Boston, MA - 02120",
-    "customerContact": 8573768611,
-    "customerUsername": "himanshu",
-    "customerPassword": "himanshurocks"
+    "customerName": "Sahil Bhanot",
+    "customerAddress": "810 Tremont Street Boston MA",
+    "customerContact": 987654321,
+    "customerUsername": "sahil",
+    "customerPassword": "bhanot"
   },
   {
-    "customerName": "Vibhi",
-    "customerAddress": "712 Calmen Street Boston MA 02120",
-    "customerContact": 2222222222,
-    "customerUsername": "vibhi",
-    "customerPassword": "vibhirocks"
+    "customerName": "Rohit Chouhan",
+    "customerAddress": "810 Tremont Street Boston MA",
+    "customerContact": 192837465,
+    "customerUsername": "rohit",
+    "customerPassword": "chouhan"
   },
   {
-    "customerName": "viveksharmaamesh Sahasrabuuddhe",
-    "customerAddress": "11, Bhagyashree Society, Boston, MA - 02120",
-    "customerContact": 8657298290,
-    "customerUsername": "pms",
-    "customerPassword": "pmsrocks"
+    "customerName": "Vidhi Popat",
+    "customerAddress": "Boylston Street",
+    "customerContact": 918273645,
+    "customerUsername": "vidhi",
+    "customerPassword": "popat"
   },
   {
-    "customerName": "Vivek",
-    "customerAddress": "1575 Tremont",
+    "customerName": "Vivek Sharma",
+    "customerAddress": "810 Tremont Street Boston MA",
     "customerContact": 9897731487,
     "customerUsername": "vivek",
     "customerPassword": "sharma"

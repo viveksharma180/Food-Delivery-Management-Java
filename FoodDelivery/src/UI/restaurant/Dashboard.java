@@ -4,6 +4,7 @@
  */
 package UI.restaurant;
 
+import UI.MainJFrame;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import templates.DB4OUtils;
@@ -287,7 +288,9 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        this.dispose();
+        super.dispose();
+            MainJFrame mj = new MainJFrame();
+            mj.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed

@@ -4,6 +4,7 @@
  */
 package UI.customer;
 
+import UI.MainJFrame;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -396,7 +397,9 @@ public class CustomerDashboard extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        this.dispose();
+        super.dispose();
+            MainJFrame mj = new MainJFrame();
+            mj.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed

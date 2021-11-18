@@ -72,6 +72,14 @@ public class RestaurantTemplate {
         this.restaurantUsername = restaurantUsername;
         this.restaurantPassword = restaurantPassword;
     }
+    
+    public RestaurantTemplate(String restaurantName, String restaurantAddress, Long restaurantNumber, String restaurantUsername, String restaurantPassword) {
+        this.restaurantName = restaurantName;
+        this.restaurantAddress = restaurantAddress;
+        this.restaurantNumber = restaurantNumber;
+        this.restaurantUsername = restaurantUsername;
+        this.restaurantPassword = restaurantPassword;
+    }
 
     @Override
     public String toString() {

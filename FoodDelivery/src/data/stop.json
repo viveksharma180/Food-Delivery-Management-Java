@@ -1,0 +1,17 @@
+[
+  {
+    "dishName": "Apples",
+    "dishSummary": "Fruit",
+    "dishPrice": 0.5
+  },
+  {
+    "dishName": "Oranges",
+    "dishSummary": "Fruit",
+    "dishPrice": 0.6
+  },
+  {
+    "dishName": "Bread",
+    "dishSummary": "Bakery",
+    "dishPrice": 1.99
+  }
+]
