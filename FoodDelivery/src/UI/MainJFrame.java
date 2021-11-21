@@ -6,14 +6,25 @@ package UI;
 
 import UI.DeliveryMan.DeliveryManDashboard;
 import UI.adminD.AdminMainDashboard;
-import UI.restaurant.Dashboard;
 import UI.customer.CustomerDashboard;
+import UI.restaurant.Dashboard;
+import java.awt.BorderLayout;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import templates.CustomerTemplate;
 import templates.DB4OUtils;
 import templates.DeliveryManTemplate;
 import templates.RestaurantTemplate;
+
 
 /**
  *
@@ -23,16 +34,45 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private String adminUser = "vivek";
      private String adminPass = "sharma";
-     private ArrayList<RestaurantTemplate> restaurant = DB4OUtils.readRestaurants();
-     private ArrayList<DeliveryManTemplate> deliveryMan = DB4OUtils.readDeliveryMan();
-     private ArrayList<CustomerTemplate> customer = DB4OUtils.readCustomer();
+     private ArrayList<RestaurantTemplate> restaurantList = DB4OUtils.readRestaurants();
+     private ArrayList<DeliveryManTemplate> deliveryManList = DB4OUtils.readDeliveryMan();
+     private ArrayList<CustomerTemplate> customerList = DB4OUtils.readCustomer();
+     Image Shortenedimg, Shortendimg1;
+     BufferedImage bImage, bImage1;
     
     /**
      * Creates new form MainJFrame
      */
     public MainJFrame() {
         initComponents();
+        displayLogo();
+//        background();
     }
+    
+    public void displayLogo(){
+        try {
+            bImage = ImageIO.read(new File("src/Assets/Logo.png"));
+            Shortenedimg = bImage.getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+//            JLabel picLabel = new JLabel(new ImageIcon(Shortenedimg));
+//            lblPic = picLabel;
+            lblPic.setIcon(new ImageIcon(Shortenedimg));
+        } catch (NullPointerException | IOException e) {
+            
+        }
+    }
+    
+    public void background(){
+        try {
+    final Image backgroundImage = javax.imageio.ImageIO.read(new File("src/Assets/Main_Background.jpeg"));
+     setContentPane(new JPanel(new BorderLayout()) {
+        @Override public void paintComponent(Graphics g) {
+            g.drawImage(backgroundImage, 0, 0,getWidth(),getHeight(), null);
+        }
+         });
+        } catch (IOException e) {
+        throw new RuntimeException(e);
+        }
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,6 +87,8 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        lblPic = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         lblUserName = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
@@ -57,13 +99,12 @@ public class MainJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
         jPanel3.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel2.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 36)); // NOI18N
@@ -73,10 +114,10 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(119, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel2)
-                .addGap(109, 109, 109))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,24 +127,47 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap(41, Short.MAX_VALUE))
         );
 
+        jPanel5.setBackground(new java.awt.Color(204, 204, 255));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(lblPic)
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(lblPic)
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(83, Short.MAX_VALUE)
+                .addGap(25, 25, 25)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(156, 156, 156))
+                .addGap(49, 49, 49))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBackground(new java.awt.Color(204, 204, 255));
 
         lblUserName.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 24)); // NOI18N
         lblUserName.setText("User Name");
@@ -112,6 +176,7 @@ public class MainJFrame extends javax.swing.JFrame {
         lblPassword.setText("Password");
 
         btnLogin.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 18)); // NOI18N
+        btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/Login-icon.png"))); // NOI18N
         btnLogin.setText("Login");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,8 +200,8 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap(53, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnLogin)
-                .addGap(196, 196, 196))
+                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(162, 162, 162))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,9 +214,9 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPassword)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(78, 78, 78)
+                .addGap(70, 70, 70)
                 .addComponent(btnLogin)
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -165,7 +230,7 @@ public class MainJFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(81, 81, 81)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,7 +239,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -197,12 +262,12 @@ public class MainJFrame extends javax.swing.JFrame {
         String username = txtUserName.getText();
         String password = txtPassword.getText();
         
-        for (RestaurantTemplate r: restaurant) {
+        for (RestaurantTemplate r: restaurantList) {
             if (r.getRestaurantUsername().equals(username)) {
                 if (r.getRestaurantPassword().equals(password)) {
                     super.dispose();
-                    Dashboard restaurantDashboard = new Dashboard(r);
-                    restaurantDashboard.setVisible(true);
+                    Dashboard restaurantListDashboard = new Dashboard(r);
+                    restaurantListDashboard.setVisible(true);
                     JOptionPane.showMessageDialog(this, "Restaurant Login Successfull!");
                 } else {
                     JOptionPane.showMessageDialog(this, "Incorrect Username or Password!!!");
@@ -211,12 +276,12 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         }
         
-        for (CustomerTemplate c: customer) {
+        for (CustomerTemplate c: customerList) {
             if (c.getCustomerUsername().equals(username)) {
                 if (c.getCustomerPassword().equals(password)) {
                     super.dispose();
-                    CustomerDashboard customerDash = new CustomerDashboard(c);
-                    customerDash.setVisible(true);
+                    CustomerDashboard customerListDash = new CustomerDashboard(c);
+                    customerListDash.setVisible(true);
                     JOptionPane.showMessageDialog(this, "Customer Login Successfull!");
                 } else {
                     JOptionPane.showMessageDialog(this, "Incorrect Username or Password!!!");
@@ -225,7 +290,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         }
         
-        for (DeliveryManTemplate d: deliveryMan) {
+        for (DeliveryManTemplate d: deliveryManList) {
             if (d.getDeliveryManUsername().equals(username)) {
                 if (d.getDeliveryManPassword().equals(password)) {
                     super.dispose();
@@ -292,7 +357,9 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblPic;
     private javax.swing.JLabel lblUserName;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;

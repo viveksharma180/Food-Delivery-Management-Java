@@ -1,0 +1,12 @@
+[
+  {
+    "dishName": "Hot Milk Chocolate",
+    "dishSummary": "Beverage",
+    "dishPrice": 7.75
+  },
+  {
+    "dishName": "Chocolate Coffee",
+    "dishSummary": "Beverage",
+    "dishPrice": 4.99
+  }
+]

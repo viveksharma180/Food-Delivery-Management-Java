@@ -1,23 +1,44 @@
 [
   {
     "dish": {
-      "dishName": "Pork Pizza",
-      "dishSummary": "Non veg",
-      "dishPrice": 7.49
+      "dishName": "chickenwings",
+      "dishSummary": "chicken",
+      "dishPrice": 8.99
     },
     "restaurant": {
-      "restaurantName": "Tremont Pizza",
-      "restaurantAddress": "Tremont Street",
-      "restaurantNumber": 1234567123,
-      "restaurantUsername": "tremont",
-      "restaurantPassword": "pizza"
+      "restaurantName": "Popeye",
+      "restaurantAddress": "Curry Center",
+      "restaurantNumber": 4040404040,
+      "restaurantUsername": "popeye",
+      "restaurantPassword": "popeye"
     },
     "customer": {
-      "customerName": "Vasu Maheshwari",
+      "customerName": "Raghav Kandpal",
       "customerAddress": "810 Tremont Street Boston MA",
-      "customerContact": 123456789,
-      "customerUsername": "vasu",
-      "customerPassword": "maheshwari"
+      "customerContact": 9897731487,
+      "customerUsername": "raghav",
+      "customerPassword": "kandpal"
+    }
+  },
+  {
+    "dish": {
+      "dishName": "chickenwings",
+      "dishSummary": "chicken",
+      "dishPrice": 8.99
+    },
+    "restaurant": {
+      "restaurantName": "Popeye",
+      "restaurantAddress": "Curry Center",
+      "restaurantNumber": 4040404040,
+      "restaurantUsername": "popeye",
+      "restaurantPassword": "popeye"
+    },
+    "customer": {
+      "customerName": "Raghav Kandpal",
+      "customerAddress": "810 Tremont Street Boston MA",
+      "customerContact": 9897731487,
+      "customerUsername": "raghav",
+      "customerPassword": "kandpal"
     }
   }
 ]

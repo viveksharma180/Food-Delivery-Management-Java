@@ -1,16 +1,16 @@
 [
   {
     "dish": {
-      "dishName": "Apples",
-      "dishSummary": "Fruit",
-      "dishPrice": 0.5
+      "dishName": "Hot Milk Chocolate",
+      "dishSummary": "Beverage",
+      "dishPrice": 7.75
     },
     "restaurant": {
-      "restaurantName": "Stop and Shop",
-      "restaurantAddress": "Tremont Street",
-      "restaurantNumber": 987654321,
-      "restaurantUsername": "stop",
-      "restaurantPassword": "shop"
+      "restaurantName": "Burdick Chocolate",
+      "restaurantAddress": "Newbury Street",
+      "restaurantNumber": 8126528419,
+      "restaurantUsername": "burdick",
+      "restaurantPassword": "chocolates"
     },
     "customer": {
       "customerName": "Raghav Kandpal",
@@ -22,37 +22,16 @@
   },
   {
     "dish": {
-      "dishName": "Oranges",
-      "dishSummary": "Fruit",
-      "dishPrice": 0.6
+      "dishName": "Chocolate Coffee",
+      "dishSummary": "Beverage",
+      "dishPrice": 4.99
     },
     "restaurant": {
-      "restaurantName": "Stop and Shop",
-      "restaurantAddress": "Tremont Street",
-      "restaurantNumber": 987654321,
-      "restaurantUsername": "stop",
-      "restaurantPassword": "shop"
-    },
-    "customer": {
-      "customerName": "Raghav Kandpal",
-      "customerAddress": "810 Tremont Street Boston MA",
-      "customerContact": 9897731487,
-      "customerUsername": "raghav",
-      "customerPassword": "kandpal"
-    }
-  },
-  {
-    "dish": {
-      "dishName": "Jam",
-      "dishSummary": "Bakery",
-      "dishPrice": 1.0
-    },
-    "restaurant": {
-      "restaurantName": "Stop and Shop",
-      "restaurantAddress": "Tremont Street",
-      "restaurantNumber": 987654321,
-      "restaurantUsername": "stop",
-      "restaurantPassword": "shop"
+      "restaurantName": "Burdick Chocolate",
+      "restaurantAddress": "Newbury Street",
+      "restaurantNumber": 8126528419,
+      "restaurantUsername": "burdick",
+      "restaurantPassword": "chocolates"
     },
     "customer": {
       "customerName": "Raghav Kandpal",

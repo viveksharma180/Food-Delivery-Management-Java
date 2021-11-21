@@ -5,9 +5,15 @@
 package UI.admin.restaurant;
 
 import UI.adminD.AdminMainDashboard;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import templates.DB4OUtils;
 import templates.RestaurantTemplate;
@@ -23,10 +29,25 @@ public class RestaurantManage extends javax.swing.JFrame {
      */
     private ArrayList<RestaurantTemplate> restaurant;
     private int index = -1;
+    Image Shortenedimg, Shortendimg1;
+     BufferedImage bImage, bImage1;
     
     public RestaurantManage() {
         this.restaurant = DB4OUtils.readRestaurants();
         initComponents();
+        displayLogo();
+    }
+    
+    public void displayLogo(){
+        try {
+            bImage = ImageIO.read(new File("src/Assets/User-Executive-Red-icon.png"));
+            Shortenedimg = bImage.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+//            JLabel picLabel = new JLabel(new ImageIcon(Shortenedimg));
+//            lblPic = picLabel;
+            lblPic.setIcon(new ImageIcon(Shortenedimg));
+        } catch (NullPointerException | IOException e) {
+            
+        }
     }
 
     /**
@@ -39,10 +60,13 @@ public class RestaurantManage extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btnBack1 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        lblPic = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtRestaurantName = new javax.swing.JTextField();
@@ -75,16 +99,28 @@ public class RestaurantManage extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        jLabel2.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 36)); // NOI18N
         jLabel2.setText("Restaurant management");
 
+        btnBack1.setBackground(new java.awt.Color(204, 204, 255));
         btnBack1.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 18)); // NOI18N
         btnBack1.setText("Back");
         btnBack1.addActionListener(new java.awt.event.ActionListener() {
@@ -93,34 +129,59 @@ public class RestaurantManage extends javax.swing.JFrame {
             }
         });
 
+        jPanel7.setBackground(new java.awt.Color(204, 204, 255));
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(lblPic)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(lblPic)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(400, 400, 400)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(178, 178, 178)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addGap(16, 16, 16)
                     .addComponent(btnBack1)
-                    .addContainerGap(860, Short.MAX_VALUE)))
+                    .addContainerGap(864, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(26, 26, 26)
                 .addComponent(jLabel2)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(btnBack1, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                    .addContainerGap(26, Short.MAX_VALUE)
+                    .addComponent(btnBack1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(30, 30, 30)))
         );
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBackground(new java.awt.Color(204, 204, 255));
         jPanel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
@@ -144,6 +205,7 @@ public class RestaurantManage extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
         jLabel6.setText("Password for Login:");
 
+        btnAdd.setBackground(new java.awt.Color(204, 204, 255));
         btnAdd.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnAdd.setText("Add Restaurant");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -222,7 +284,7 @@ public class RestaurantManage extends javax.swing.JFrame {
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBackground(new java.awt.Color(204, 204, 255));
         jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jLabel8.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 16)); // NOI18N
@@ -231,6 +293,7 @@ public class RestaurantManage extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
         jLabel9.setText("Phone Number of Restaurant:");
 
+        btnSearch.setBackground(new java.awt.Color(204, 204, 255));
         btnSearch.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -239,6 +302,7 @@ public class RestaurantManage extends javax.swing.JFrame {
             }
         });
 
+        btnDeleteRestaurant.setBackground(new java.awt.Color(204, 204, 255));
         btnDeleteRestaurant.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnDeleteRestaurant.setText("Delete Restaurant");
         btnDeleteRestaurant.addActionListener(new java.awt.event.ActionListener() {
@@ -247,6 +311,7 @@ public class RestaurantManage extends javax.swing.JFrame {
             }
         });
 
+        btnUpdateRestaurant.setBackground(new java.awt.Color(204, 204, 255));
         btnUpdateRestaurant.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnUpdateRestaurant.setText("Update Restaurant");
         btnUpdateRestaurant.addActionListener(new java.awt.event.ActionListener() {
@@ -283,7 +348,7 @@ public class RestaurantManage extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch)
@@ -397,8 +462,8 @@ public class RestaurantManage extends javax.swing.JFrame {
         } else {
             RestaurantTemplate p = restaurant.get(index);
             txtRestaurantName.setText(p.getRestaurantName());
-            txtRestaurantAddress.setText(p.getRestaurantNumber() + "");
-            txtRestaurantPhone.setText(p.getRestaurantAddress());
+            txtRestaurantPhone.setText(p.getRestaurantNumber() + "");
+            txtRestaurantAddress.setText(p.getRestaurantAddress());
             txtUserName.setText(p.getRestaurantUsername());
             txtPassword.setText(p.getRestaurantPassword());
             JOptionPane.showMessageDialog(this, "Restaurant found! " + p.getRestaurantName());
@@ -409,26 +474,26 @@ public class RestaurantManage extends javax.swing.JFrame {
 
     private void btnUpdateRestaurantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateRestaurantActionPerformed
         // TODO add your handling code here:
-//        if (!DB4OUtils.validateName(txtRestaurantName.getText())) {
-//            JOptionPane.showMessageDialog(this, "Please enter a valid restaurant name.");
-//            return;
-//        }
-//        if (!DB4OUtils.validateNameNumber(txtRestaurantAddress.getText())) {
-//            JOptionPane.showMessageDialog(this, "Please enter a valid restaurant address.");
-//            return;
-//        }
-//        if (!DB4OUtils.validateNumber(txtRestaurantPhone.getText())) {
-//            JOptionPane.showMessageDialog(this, "Please enter a valid restaurant contact.");
-//            return;
-//        }
-//        if (!DB4OUtils.validateNameNumber(txtUserName.getText())) {
-//            JOptionPane.showMessageDialog(this, "Please enter a valid restaurant username.");
-//            return;
-//        }
-//        if (!DB4OUtils.validateNameNumber(txtPassword.getText())) {
-//            JOptionPane.showMessageDialog(this, "Please enter a valid restaurant password.");
-//            return;
-//        }
+        if (!DB4OUtils.validateName(txtRestaurantName.getText())) {
+            JOptionPane.showMessageDialog(this, "Enter a name.");
+            return;
+        }
+        if (!DB4OUtils.validateNameNumber(txtRestaurantAddress.getText())) {
+            JOptionPane.showMessageDialog(this, "Enter a address.");
+            return;
+        }
+        if (!DB4OUtils.validateNumber(txtRestaurantPhone.getText())) {
+            JOptionPane.showMessageDialog(this, "Enter a contact.");
+            return;
+        }       
+        if (!DB4OUtils.validateNameNumber(txtUserName.getText())) {
+            JOptionPane.showMessageDialog(this, "Enter a username.");
+            return;
+        }
+        if (!DB4OUtils.validateNameNumber(txtPassword.getText())) {
+            JOptionPane.showMessageDialog(this, "Enter a password.");
+            return;
+        }
         
         if (index != -1) {
             RestaurantTemplate p = restaurant.get(index);
@@ -439,11 +504,9 @@ public class RestaurantManage extends javax.swing.JFrame {
             p.setRestaurantPassword(txtPassword.getText());
             restaurant.set(index, p);
             DB4OUtils.writeRestaurants(restaurant);
-            JOptionPane.showMessageDialog(this, "Updated Succesfully.");
-//            super.dispose();
-//            RestaurantManage rm = new RestaurantManage();
-//            rm.setVisible(true);
-        }
+            JOptionPane.showMessageDialog(this, "Updated!");
+            }
+
     }//GEN-LAST:event_btnUpdateRestaurantActionPerformed
 
     private void btnDeleteRestaurantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteRestaurantActionPerformed
@@ -525,6 +588,9 @@ public class RestaurantManage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JLabel lblPic;
     private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtRestaurantAddress;
     private javax.swing.JTextField txtRestaurantName;

@@ -6,9 +6,15 @@ package UI.admin.delivery;
 
 import UI.admin.restaurant.RestaurantManage;
 import UI.adminD.AdminMainDashboard;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import templates.DB4OUtils;
 import templates.DeliveryManTemplate;
@@ -24,10 +30,25 @@ public class DeliveryManManage extends javax.swing.JFrame {
      */
     private ArrayList<DeliveryManTemplate> deliveryman;
     private int index = -1;
+      Image Shortenedimg, Shortendimg1;
+     BufferedImage bImage, bImage1;
     
     public DeliveryManManage() {
         this.deliveryman = DB4OUtils.readDeliveryMan();
         initComponents();
+        displayLogo();
+    }
+    
+    public void displayLogo(){
+        try {
+            bImage = ImageIO.read(new File("src/Assets/User-Executive-Red-icon.png"));
+            Shortenedimg = bImage.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+//            JLabel picLabel = new JLabel(new ImageIcon(Shortenedimg));
+//            lblPic = picLabel;
+            lblPic.setIcon(new ImageIcon(Shortenedimg));
+        } catch (NullPointerException | IOException e) {
+            
+        }
     }
 
     /**
@@ -43,6 +64,8 @@ public class DeliveryManManage extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btnBack1 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        lblPic = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -66,14 +89,15 @@ public class DeliveryManManage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        jLabel2.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 36)); // NOI18N
         jLabel2.setText("Delivery Management");
 
+        btnBack1.setBackground(new java.awt.Color(204, 204, 255));
         btnBack1.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 18)); // NOI18N
         btnBack1.setText("Back");
         btnBack1.addActionListener(new java.awt.event.ActionListener() {
@@ -82,14 +106,35 @@ public class DeliveryManManage extends javax.swing.JFrame {
             }
         });
 
+        jPanel4.setBackground(new java.awt.Color(204, 204, 255));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(lblPic)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(lblPic)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(400, 400, 400)
+                .addGap(273, 273, 273)
                 .addComponent(jLabel2)
-                .addContainerGap(357, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addGap(16, 16, 16)
@@ -99,17 +144,21 @@ public class DeliveryManManage extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel2)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(btnBack1, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                    .addContainerGap(30, Short.MAX_VALUE)
+                    .addComponent(btnBack1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(28, 28, 28)))
         );
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel7.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 16)); // NOI18N
@@ -136,6 +185,7 @@ public class DeliveryManManage extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
         jLabel6.setText("Password for Login:");
 
+        btnAdd.setBackground(new java.awt.Color(204, 204, 255));
         btnAdd.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnAdd.setText("Add Delivery Person");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -211,7 +261,7 @@ public class DeliveryManManage extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel10.setBackground(new java.awt.Color(204, 204, 255));
         jPanel10.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jLabel18.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 16)); // NOI18N
@@ -220,6 +270,7 @@ public class DeliveryManManage extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
         jLabel19.setText("Phone Number of Delivery Person:");
 
+        btnSearch.setBackground(new java.awt.Color(204, 204, 255));
         btnSearch.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -228,6 +279,7 @@ public class DeliveryManManage extends javax.swing.JFrame {
             }
         });
 
+        btnDeleteDelivery.setBackground(new java.awt.Color(204, 204, 255));
         btnDeleteDelivery.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnDeleteDelivery.setText("Delete Delivery Person");
         btnDeleteDelivery.addActionListener(new java.awt.event.ActionListener() {
@@ -236,6 +288,7 @@ public class DeliveryManManage extends javax.swing.JFrame {
             }
         });
 
+        btnUpdateDelivery.setBackground(new java.awt.Color(204, 204, 255));
         btnUpdateDelivery.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnUpdateDelivery.setText("Update Delivery Person");
         btnUpdateDelivery.addActionListener(new java.awt.event.ActionListener() {
@@ -249,7 +302,7 @@ public class DeliveryManManage extends javax.swing.JFrame {
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                         .addComponent(btnUpdateDelivery)
@@ -272,7 +325,7 @@ public class DeliveryManManage extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch)
@@ -520,6 +573,8 @@ public class DeliveryManManage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel lblPic;
     private javax.swing.JTextField txtDeliveryAddress;
     private javax.swing.JTextField txtDeliveryName;
     private javax.swing.JTextField txtDeliveryPhone;

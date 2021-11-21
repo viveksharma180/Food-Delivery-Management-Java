@@ -8,20 +8,12 @@
     "available": false
   },
   {
-    "deliveryManName": "Arshabh Semwal",
-    "deliveryManAddress": "SUNY Buffalo",
-    "deliveryManContact": 8630092932,
-    "deliveryManUsername": "arshabh",
-    "deliveryManPassword": "semwal",
-    "available": false
-  },
-  {
     "deliveryManName": "Shubham Mittal",
     "deliveryManAddress": "Rudrapur Uttarakhand",
     "deliveryManContact": 8979012349,
     "deliveryManUsername": "shubham",
     "deliveryManPassword": "mittal",
-    "available": false
+    "available": true
   },
   {
     "deliveryManName": "Rohit Chouhan",

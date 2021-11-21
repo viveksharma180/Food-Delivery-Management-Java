@@ -5,9 +5,15 @@
 package UI.admin.customer;
 
 import UI.adminD.AdminMainDashboard;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import templates.CustomerTemplate;
 import templates.DB4OUtils;
@@ -23,10 +29,25 @@ public class CustomerManage extends javax.swing.JFrame {
      */
     private ArrayList<CustomerTemplate> customer;
     private int index = -1;
+    Image Shortenedimg, Shortendimg1;
+     BufferedImage bImage, bImage1;    
     
     public CustomerManage() {
         this.customer = DB4OUtils.readCustomer();
         initComponents();
+        displayLogo();
+    }
+    
+    public void displayLogo(){
+        try {
+            bImage = ImageIO.read(new File("src/Assets/User-Executive-Red-icon.png"));
+            Shortenedimg = bImage.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+//            JLabel picLabel = new JLabel(new ImageIcon(Shortenedimg));
+//            lblPic = picLabel;
+            lblPic.setIcon(new ImageIcon(Shortenedimg));
+        } catch (NullPointerException | IOException e) {
+            
+        }
     }
 
     /**
@@ -42,6 +63,8 @@ public class CustomerManage extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btnBack1 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        lblPic = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -65,14 +88,15 @@ public class CustomerManage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        jLabel2.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 36)); // NOI18N
         jLabel2.setText("Customer Management");
 
+        btnBack1.setBackground(new java.awt.Color(204, 204, 255));
         btnBack1.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 18)); // NOI18N
         btnBack1.setText("Back");
         btnBack1.addActionListener(new java.awt.event.ActionListener() {
@@ -81,14 +105,35 @@ public class CustomerManage extends javax.swing.JFrame {
             }
         });
 
+        jPanel4.setBackground(new java.awt.Color(204, 204, 255));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(lblPic)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(lblPic)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(400, 400, 400)
+                .addGap(269, 269, 269)
                 .addComponent(jLabel2)
-                .addContainerGap(343, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addGap(16, 16, 16)
@@ -98,17 +143,21 @@ public class CustomerManage extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(31, 31, 31)
                 .addComponent(jLabel2)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(btnBack1, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                    .addContainerGap(18, Short.MAX_VALUE)
+                    .addComponent(btnBack1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(26, 26, 26)))
         );
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel7.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 16)); // NOI18N
@@ -135,6 +184,7 @@ public class CustomerManage extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
         jLabel6.setText("Password for Login:");
 
+        btnAdd.setBackground(new java.awt.Color(204, 204, 255));
         btnAdd.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnAdd.setText("Add Customer");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -210,7 +260,7 @@ public class CustomerManage extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel10.setBackground(new java.awt.Color(204, 204, 255));
         jPanel10.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jLabel18.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 16)); // NOI18N
@@ -219,6 +269,7 @@ public class CustomerManage extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
         jLabel19.setText("Phone Number of Customer:");
 
+        btnSearch5.setBackground(new java.awt.Color(204, 204, 255));
         btnSearch5.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnSearch5.setText("Search");
         btnSearch5.addActionListener(new java.awt.event.ActionListener() {
@@ -227,6 +278,7 @@ public class CustomerManage extends javax.swing.JFrame {
             }
         });
 
+        btnDeleteCustomer.setBackground(new java.awt.Color(204, 204, 255));
         btnDeleteCustomer.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnDeleteCustomer.setText("Delete Customer");
         btnDeleteCustomer.addActionListener(new java.awt.event.ActionListener() {
@@ -235,6 +287,7 @@ public class CustomerManage extends javax.swing.JFrame {
             }
         });
 
+        btnUpdateCustomer.setBackground(new java.awt.Color(204, 204, 255));
         btnUpdateCustomer.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnUpdateCustomer.setText("Update Customer");
         btnUpdateCustomer.addActionListener(new java.awt.event.ActionListener() {
@@ -248,7 +301,7 @@ public class CustomerManage extends javax.swing.JFrame {
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(79, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                         .addComponent(btnUpdateCustomer)
@@ -276,7 +329,7 @@ public class CustomerManage extends javax.swing.JFrame {
                     .addComponent(txtSearchCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch5)
                     .addComponent(jLabel19))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnUpdateCustomer)
                     .addComponent(btnDeleteCustomer))
@@ -425,13 +478,12 @@ public class CustomerManage extends javax.swing.JFrame {
 
     private void btnUpdateCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateCustomerActionPerformed
         // TODO add your handling code here:
-
         if (!DB4OUtils.validateName(txtCustomerName.getText())) {
-            JOptionPane.showMessageDialog(this, "Enter a name.");
+            JOptionPane.showMessageDialog(this, "Enter a customer name.");
             return;
         }
-        if (!DB4OUtils.validateNumber(txtCustomerPhone.getText()) || txtCustomerPhone.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Enter a phone numbet!.");
+        if (!DB4OUtils.validateNumber(txtCustomerPhone.getText())) {
+            JOptionPane.showMessageDialog(this, "Enter a phone number.");
             return;
         }
         if (!DB4OUtils.validateNameNumber(txtCustomerAddress.getText())) {
@@ -446,20 +498,20 @@ public class CustomerManage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Enter a password.");
             return;
         }
-        if (index == -1) {
+        
+        if (index != -1) {
             CustomerTemplate p = customer.get(index);
-            txtCustomerName.setText(p.getCustomerName());
-            txtCustomerPhone.setText(p.getCustomerContact() + "");
-            txtCustomerAddress.setText(p.getCustomerAddress());
-            txtUserName.setText(p.getCustomerUsername());
-            txtPassword.setText(p.getCustomerPassword());
-            ArrayList<CustomerTemplate> customers = DB4OUtils.readCustomer();
-            System.out.println(customers.toString());
-            customer.set(index,p);
+            p.setCustomerName(txtCustomerName.getText());
+            p.setCustomerContact(Long.valueOf(txtCustomerPhone.getText()));
+            p.setCustomerAddress(txtCustomerAddress.getText());
+            p.setCustomerUsername(txtUserName.getText());
+            p.setCustomerPassword(txtPassword.getText());
+            customer.set(index, p);
             DB4OUtils.writeCustomer(customer);
-            JOptionPane.showMessageDialog(this, "Updated succesfully!");
-//            updateCustomerPanel.setVisible(true);
+            JOptionPane.showMessageDialog(this, "Updated!");
         }
+        
+        
         
     }//GEN-LAST:event_btnUpdateCustomerActionPerformed
 
@@ -502,32 +554,9 @@ public class CustomerManage extends javax.swing.JFrame {
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnBack1;
     private javax.swing.JButton btnDeleteCustomer;
-    private javax.swing.JButton btnDeleteRestaurant;
-    private javax.swing.JButton btnDeleteRestaurant1;
-    private javax.swing.JButton btnDeleteRestaurant2;
-    private javax.swing.JButton btnDeleteRestaurant3;
-    private javax.swing.JButton btnDeleteRestaurant4;
-    private javax.swing.JButton btnSearch;
-    private javax.swing.JButton btnSearch1;
-    private javax.swing.JButton btnSearch2;
-    private javax.swing.JButton btnSearch3;
-    private javax.swing.JButton btnSearch4;
     private javax.swing.JButton btnSearch5;
     private javax.swing.JButton btnUpdateCustomer;
-    private javax.swing.JButton btnUpdateRestaurant;
-    private javax.swing.JButton btnUpdateRestaurant1;
-    private javax.swing.JButton btnUpdateRestaurant2;
-    private javax.swing.JButton btnUpdateRestaurant3;
-    private javax.swing.JButton btnUpdateRestaurant4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -536,26 +565,16 @@ public class CustomerManage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel lblPic;
     private javax.swing.JTextField txtCustomerAddress;
     private javax.swing.JTextField txtCustomerName;
     private javax.swing.JTextField txtCustomerPhone;
     private javax.swing.JTextField txtPassword;
-    private javax.swing.JTextField txtSearch;
-    private javax.swing.JTextField txtSearch1;
-    private javax.swing.JTextField txtSearch2;
-    private javax.swing.JTextField txtSearch3;
-    private javax.swing.JTextField txtSearch4;
     private javax.swing.JTextField txtSearchCustomer;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables

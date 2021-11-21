@@ -20,5 +20,19 @@
     "restaurantNumber": 1234567123,
     "restaurantUsername": "tremont",
     "restaurantPassword": "pizza"
+  },
+  {
+    "restaurantName": "Burdick Chocolate",
+    "restaurantAddress": "Newbury Street",
+    "restaurantNumber": 8126528419,
+    "restaurantUsername": "burdick",
+    "restaurantPassword": "chocolates"
+  },
+  {
+    "restaurantName": "Popeye",
+    "restaurantAddress": "Curry Center",
+    "restaurantNumber": 4040404040,
+    "restaurantUsername": "popeye",
+    "restaurantPassword": "popeye"
   }
 ]
