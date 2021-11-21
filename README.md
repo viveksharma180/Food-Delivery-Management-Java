@@ -1,4 +1,4 @@
-# 002105272_Sharma_Vivek-2
+# 002105272_Sharma_Vivek
 
 ##### Overview
 The following repo contains Assignment-5 for INFO 5100 by Vivek Sharm(NUID 002105272).
