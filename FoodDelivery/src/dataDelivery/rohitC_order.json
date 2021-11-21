@@ -1,44 +1,107 @@
 [
   {
     "dish": {
-      "dishName": "Hot Milk Chocolate",
-      "dishSummary": "Beverage",
-      "dishPrice": 7.75
+      "dishName": "Veggie Burger",
+      "dishSummary": "Vegan",
+      "dishPrice": 1.99
     },
     "restaurant": {
-      "restaurantName": "Burdick Chocolate",
-      "restaurantAddress": "Newbury Street",
-      "restaurantNumber": 8126528419,
-      "restaurantUsername": "burdick",
-      "restaurantPassword": "chocolates"
+      "restaurantName": "Mcdonalds",
+      "restaurantAddress": "Boston",
+      "restaurantNumber": 8080808080,
+      "restaurantUsername": "mcd",
+      "restaurantPassword": "mcd"
     },
     "customer": {
-      "customerName": "Raghav Kandpal",
-      "customerAddress": "810 Tremont Street Boston MA",
-      "customerContact": 9897731487,
-      "customerUsername": "raghav",
-      "customerPassword": "kandpal"
+      "customerName": "Sahil",
+      "customerAddress": "1575 Tremont Street",
+      "customerContact": 1010101010,
+      "customerUsername": "sahil",
+      "customerPassword": "bhanot"
     }
   },
   {
     "dish": {
-      "dishName": "Chocolate Coffee",
-      "dishSummary": "Beverage",
-      "dishPrice": 4.99
+      "dishName": "Coke",
+      "dishSummary": "Soft Drinks",
+      "dishPrice": 0.99
     },
     "restaurant": {
-      "restaurantName": "Burdick Chocolate",
-      "restaurantAddress": "Newbury Street",
-      "restaurantNumber": 8126528419,
-      "restaurantUsername": "burdick",
-      "restaurantPassword": "chocolates"
+      "restaurantName": "Mcdonalds",
+      "restaurantAddress": "Boston",
+      "restaurantNumber": 8080808080,
+      "restaurantUsername": "mcd",
+      "restaurantPassword": "mcd"
     },
     "customer": {
-      "customerName": "Raghav Kandpal",
-      "customerAddress": "810 Tremont Street Boston MA",
-      "customerContact": 9897731487,
-      "customerUsername": "raghav",
-      "customerPassword": "kandpal"
+      "customerName": "Sahil",
+      "customerAddress": "1575 Tremont Street",
+      "customerContact": 1010101010,
+      "customerUsername": "sahil",
+      "customerPassword": "bhanot"
+    }
+  },
+  {
+    "dish": {
+      "dishName": "McVeggie",
+      "dishSummary": "burger",
+      "dishPrice": 2.99
+    },
+    "restaurant": {
+      "restaurantName": "Mcdonalds",
+      "restaurantAddress": "Boston",
+      "restaurantNumber": 8080808080,
+      "restaurantUsername": "mcd",
+      "restaurantPassword": "mcd"
+    },
+    "customer": {
+      "customerName": "Sahil",
+      "customerAddress": "1575 Tremont Street",
+      "customerContact": 1010101010,
+      "customerUsername": "sahil",
+      "customerPassword": "bhanot"
+    }
+  },
+  {
+    "dish": {
+      "dishName": "McVeggie",
+      "dishSummary": "burger",
+      "dishPrice": 2.99
+    },
+    "restaurant": {
+      "restaurantName": "Mcdonalds",
+      "restaurantAddress": "Boston",
+      "restaurantNumber": 8080808080,
+      "restaurantUsername": "mcd",
+      "restaurantPassword": "mcd"
+    },
+    "customer": {
+      "customerName": "Sahil",
+      "customerAddress": "1575 Tremont Street",
+      "customerContact": 1010101010,
+      "customerUsername": "sahil",
+      "customerPassword": "bhanot"
+    }
+  },
+  {
+    "dish": {
+      "dishName": "McVeggie",
+      "dishSummary": "burger",
+      "dishPrice": 2.99
+    },
+    "restaurant": {
+      "restaurantName": "Mcdonalds",
+      "restaurantAddress": "Boston",
+      "restaurantNumber": 8080808080,
+      "restaurantUsername": "mcd",
+      "restaurantPassword": "mcd"
+    },
+    "customer": {
+      "customerName": "Sahil",
+      "customerAddress": "1575 Tremont Street",
+      "customerContact": 1010101010,
+      "customerUsername": "sahil",
+      "customerPassword": "bhanot"
     }
   }
 ]

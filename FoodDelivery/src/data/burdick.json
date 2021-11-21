@@ -8,5 +8,25 @@
     "dishName": "Chocolate Coffee",
     "dishSummary": "Beverage",
     "dishPrice": 4.99
+  },
+  {
+    "dishName": "Cold chocolate",
+    "dishSummary": "beverage",
+    "dishPrice": 6.76
+  },
+  {
+    "dishName": "Pan Cakes",
+    "dishSummary": "cake",
+    "dishPrice": 9.99
+  },
+  {
+    "dishName": "Salted Peanuts",
+    "dishSummary": "Snacks",
+    "dishPrice": 1.99
+  },
+  {
+    "dishName": "Burdick\u0027s Famous Chocolate Coke",
+    "dishSummary": "Beverage",
+    "dishPrice": 14.99
   }
 ]

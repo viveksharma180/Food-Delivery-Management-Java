@@ -33,7 +33,7 @@ public class CustomerManage extends javax.swing.JFrame {
      BufferedImage bImage, bImage1;    
     
     public CustomerManage() {
-        this.customer = DB4OUtils.readCustomer();
+        this.customer = DB4OUtils.rCustomer();
         initComponents();
         displayLogo();
     }
@@ -391,32 +391,32 @@ public class CustomerManage extends javax.swing.JFrame {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
-        if (!DB4OUtils.validateName(txtCustomerName.getText())) {
+        if (!DB4OUtils.nameValidation(txtCustomerName.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a customer name.");
             return;
         }
-        if (!DB4OUtils.validateNumber(txtCustomerPhone.getText())) {
+        if (!DB4OUtils.numberValidation(txtCustomerPhone.getText())) {
             JOptionPane.showMessageDialog(this, "Enter customer Phone.");
             return;
         }
-        if (!DB4OUtils.validateNameNumber(txtCustomerAddress.getText())) {
+        if (!DB4OUtils.StringIntValidation(txtCustomerAddress.getText())) {
             JOptionPane.showMessageDialog(this, "Enter customer address.");
             return;
         }
-        if (!DB4OUtils.validateName(txtUserName.getText())) {
+        if (!DB4OUtils.nameValidation(txtUserName.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a username.");
             return;
         }
-        if (!DB4OUtils.validateNameNumber(txtPassword.getText())) {
+        if (!DB4OUtils.StringIntValidation(txtPassword.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a password.");
             return;
         }
         
         CustomerTemplate c = new CustomerTemplate(txtCustomerName.getText(), txtCustomerAddress.getText(), Long.valueOf(txtCustomerPhone.getText()), txtUserName.getText(), txtPassword.getText());
-        ArrayList<CustomerTemplate> customers = DB4OUtils.readCustomer();
+        ArrayList<CustomerTemplate> customers = DB4OUtils.rCustomer();
         System.out.println(customers.toString());
         customers.add(c);
-        DB4OUtils.writeCustomer(customers);
+        DB4OUtils.wCustomer(customers);
         JOptionPane.showMessageDialog(this, "Submitted succesfully!");
 //        super.dispose();
 //        CustomerManage cm = new CustomerManage();
@@ -425,7 +425,7 @@ public class CustomerManage extends javax.swing.JFrame {
 
     private void btnSearch5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearch5ActionPerformed
         // TODO add your handling code here:
-        if (!DB4OUtils.validateNumber(txtSearchCustomer.getText()) || txtSearchCustomer.getText().equals("")) {
+        if (!DB4OUtils.numberValidation(txtSearchCustomer.getText()) || txtSearchCustomer.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Customer with this phone number does not exist!");
             return;
         }
@@ -465,10 +465,10 @@ public class CustomerManage extends javax.swing.JFrame {
             }
             if (vitalIndex != -1) {
                 customer.remove(vitalIndex);
-                DB4OUtils.writeCustomer(customer);
+                DB4OUtils.wCustomer(customer);
             }
             customer.remove(index);
-            DB4OUtils.writeCustomer(customer);
+            DB4OUtils.wCustomer(customer);
             JOptionPane.showMessageDialog(this, "Deleted Customer Successfully! " +  c.getCustomerName());
 //            super.dispose();
 //            CustomerManage cm = new CustomerManage();
@@ -478,23 +478,23 @@ public class CustomerManage extends javax.swing.JFrame {
 
     private void btnUpdateCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateCustomerActionPerformed
         // TODO add your handling code here:
-        if (!DB4OUtils.validateName(txtCustomerName.getText())) {
+        if (!DB4OUtils.nameValidation(txtCustomerName.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a customer name.");
             return;
         }
-        if (!DB4OUtils.validateNumber(txtCustomerPhone.getText())) {
+        if (!DB4OUtils.numberValidation(txtCustomerPhone.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a phone number.");
             return;
         }
-        if (!DB4OUtils.validateNameNumber(txtCustomerAddress.getText())) {
+        if (!DB4OUtils.StringIntValidation(txtCustomerAddress.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a address.");
             return;
         }
-        if (!DB4OUtils.validateName(txtUserName.getText())) {
+        if (!DB4OUtils.nameValidation(txtUserName.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a username.");
             return;
         }
-        if (!DB4OUtils.validateNameNumber(txtPassword.getText())) {
+        if (!DB4OUtils.StringIntValidation(txtPassword.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a password.");
             return;
         }
@@ -507,7 +507,7 @@ public class CustomerManage extends javax.swing.JFrame {
             p.setCustomerUsername(txtUserName.getText());
             p.setCustomerPassword(txtPassword.getText());
             customer.set(index, p);
-            DB4OUtils.writeCustomer(customer);
+            DB4OUtils.wCustomer(customer);
             JOptionPane.showMessageDialog(this, "Updated!");
         }
         

@@ -34,5 +34,12 @@
     "restaurantNumber": 4040404040,
     "restaurantUsername": "popeye",
     "restaurantPassword": "popeye"
+  },
+  {
+    "restaurantName": "Mcdonalds",
+    "restaurantAddress": "Boston",
+    "restaurantNumber": 8080808080,
+    "restaurantUsername": "mcd",
+    "restaurantPassword": "mcd"
   }
 ]

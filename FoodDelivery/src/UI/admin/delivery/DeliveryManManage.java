@@ -34,7 +34,7 @@ public class DeliveryManManage extends javax.swing.JFrame {
      BufferedImage bImage, bImage1;
     
     public DeliveryManManage() {
-        this.deliveryman = DB4OUtils.readDeliveryMan();
+        this.deliveryman = DB4OUtils.rDeliveryMan();
         initComponents();
         displayLogo();
     }
@@ -392,32 +392,32 @@ public class DeliveryManManage extends javax.swing.JFrame {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
-        if (!DB4OUtils.validateName(txtDeliveryName.getText())) {
+        if (!DB4OUtils.nameValidation(txtDeliveryName.getText())) {
             JOptionPane.showMessageDialog(this, "Please enter a valid delivery man name.");
             return;
         }
-        if (!DB4OUtils.validateNumber(txtDeliveryPhone.getText()) || txtDeliveryPhone.getText().equals("")) {
+        if (!DB4OUtils.numberValidation(txtDeliveryPhone.getText()) || txtDeliveryPhone.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Please enter a valid delivery man contact.");
             return;
         }
-        if (!DB4OUtils.validateNameNumber(txtDeliveryAddress.getText())) {
+        if (!DB4OUtils.StringIntValidation(txtDeliveryAddress.getText())) {
             JOptionPane.showMessageDialog(this, "Please enter a valid delivery man address.");
             return;
         }
-        if (!DB4OUtils.validateName(txtUserName.getText())) {
+        if (!DB4OUtils.nameValidation(txtUserName.getText())) {
             JOptionPane.showMessageDialog(this, "Please enter a valid delivery man username.");
             return;
         }
-        if (!DB4OUtils.validateName(txtPassword.getText())) {
+        if (!DB4OUtils.nameValidation(txtPassword.getText())) {
             JOptionPane.showMessageDialog(this, "Please enter a valid delivery man password.");
             return;
         }
         
         DeliveryManTemplate dm = new DeliveryManTemplate(txtDeliveryName.getText(), txtDeliveryAddress.getText(), Long.valueOf(txtDeliveryPhone.getText()), txtUserName.getText(), txtPassword.getText(), true);
-        ArrayList<DeliveryManTemplate> deliverymen = DB4OUtils.readDeliveryMan();
+        ArrayList<DeliveryManTemplate> deliverymen = DB4OUtils.rDeliveryMan();
         System.out.println(deliverymen.toString());
         deliverymen.add(dm);
-        DB4OUtils.writeDeliveryMan(deliverymen);
+        DB4OUtils.wDeliveryMan(deliverymen);
         JOptionPane.showMessageDialog(this, "Submitted succesfully!");
 //        super.dispose();
 //        DeliveryManManage dmm = new DeliveryManManage();
@@ -427,7 +427,7 @@ public class DeliveryManManage extends javax.swing.JFrame {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-        if (!DB4OUtils.validateNumber(txtSearch.getText()) || txtSearch.getText().equals("")) {
+        if (!DB4OUtils.numberValidation(txtSearch.getText()) || txtSearch.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Delivery Person with this phone does not exist!");
             return;
         }
@@ -467,10 +467,10 @@ public class DeliveryManManage extends javax.swing.JFrame {
             }
             if (vitalIndex != -1) {
                 deliveryman.remove(vitalIndex);
-                DB4OUtils.writeDeliveryMan(deliveryman);
+                DB4OUtils.wDeliveryMan(deliveryman);
             }
             deliveryman.remove(index);
-            DB4OUtils.writeDeliveryMan(deliveryman);
+            DB4OUtils.wDeliveryMan(deliveryman);
             JOptionPane.showMessageDialog(this, "Deleted details of " +  d.getDeliveryManName());
 //            super.dispose();
 //            RestaurantManage rm = new RestaurantManage();
@@ -481,23 +481,23 @@ public class DeliveryManManage extends javax.swing.JFrame {
 
     private void btnUpdateDeliveryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateDeliveryActionPerformed
         // TODO add your handling code here:
-        if (!DB4OUtils.validateName(txtDeliveryName.getText())) {
+        if (!DB4OUtils.nameValidation(txtDeliveryName.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a name.");
             return;
         }
-        if (!DB4OUtils.validateNumber(txtDeliveryPhone.getText()) || txtDeliveryPhone.getText().equals("")) {
+        if (!DB4OUtils.numberValidation(txtDeliveryPhone.getText()) || txtDeliveryPhone.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Enter a phone numbet!.");
             return;
         }
-        if (!DB4OUtils.validateNameNumber(txtDeliveryAddress.getText())) {
+        if (!DB4OUtils.StringIntValidation(txtDeliveryAddress.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a address.");
             return;
         }
-        if (!DB4OUtils.validateName(txtUserName.getText())) {
+        if (!DB4OUtils.nameValidation(txtUserName.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a username.");
             return;
         }
-        if (!DB4OUtils.validateNameNumber(txtPassword.getText())) {
+        if (!DB4OUtils.StringIntValidation(txtPassword.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a password.");
             return;
         }
@@ -510,7 +510,7 @@ public class DeliveryManManage extends javax.swing.JFrame {
             dm.setDeliveryManUsername(txtUserName.getText());
             dm.setDeliveryManPassword(txtPassword.getText());
             deliveryman.set(index, dm);
-            DB4OUtils.writeDeliveryMan(deliveryman);
+            DB4OUtils.wDeliveryMan(deliveryman);
             JOptionPane.showMessageDialog(this, "Updated Succesfully.");
 //            super.dispose();
 //            DeliveryManManage dmm = new DeliveryManManage();

@@ -13,7 +13,7 @@
     "deliveryManContact": 8979012349,
     "deliveryManUsername": "shubham",
     "deliveryManPassword": "mittal",
-    "available": true
+    "available": false
   },
   {
     "deliveryManName": "Rohit Chouhan",
@@ -29,6 +29,22 @@
     "deliveryManContact": 654987321,
     "deliveryManUsername": "sprika",
     "deliveryManPassword": "gaur",
+    "available": true
+  },
+  {
+    "deliveryManName": "Alvin Zhou",
+    "deliveryManAddress": "Cambridge",
+    "deliveryManContact": 6176665544,
+    "deliveryManUsername": "alvin",
+    "deliveryManPassword": "zhou",
+    "available": true
+  },
+  {
+    "deliveryManName": "Pankaj Panwar",
+    "deliveryManAddress": "Rishikesh",
+    "deliveryManContact": 9090909090,
+    "deliveryManUsername": "pankaj",
+    "deliveryManPassword": "panwar",
     "available": true
   }
 ]

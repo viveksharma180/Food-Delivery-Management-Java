@@ -33,7 +33,7 @@ public class DeliveryManDashboard extends javax.swing.JFrame {
     
     public DeliveryManDashboard(DeliveryManTemplate deliveryMan) {
         this.dm = deliveryMan;
-        newOrder = DB4OUtils.readDeliveryOrder(dm.getDeliveryManUsername());
+        newOrder = DB4OUtils.rDOrder(dm.getDeliveryManUsername());
         initComponents();
         Order();
         displayLogo();
@@ -148,10 +148,11 @@ public class DeliveryManDashboard extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                    .addComponent(jLabel2)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                        .addComponent(jLabel2)))
                 .addContainerGap())
         );
 
@@ -400,14 +401,14 @@ public class DeliveryManDashboard extends javax.swing.JFrame {
 
     private void btndeliveredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeliveredActionPerformed
         // TODO add your handling code here:
-        ArrayList<DeliveryManTemplate> deliveryMan = DB4OUtils.readDeliveryMan();
+        ArrayList<DeliveryManTemplate> deliveryMan = DB4OUtils.rDeliveryMan();
         for (int i = 0; i < deliveryMan.size(); i++) {
             if (deliveryMan.get(i).getDeliveryManUsername().equals(dm.getDeliveryManUsername())) {
                 deliveryMan.get(i).setAvailable(true);
                 break;
             }
         }
-        DB4OUtils.writeDeliveryMan(deliveryMan);
+        DB4OUtils.wDeliveryMan(deliveryMan);
         JOptionPane.showMessageDialog(this, "Order Delivered! " + newOrder.get(0).getCustomer().getCustomerName());
 //        super.dispose();
 //        AppDashboard ad = new AppDashboard();
@@ -453,9 +454,7 @@ public class DeliveryManDashboard extends javax.swing.JFrame {
         if (dm.isAvailable()) {
             JOptionPane.showMessageDialog(this, "No order alloted to " + dm.getDeliveryManName());
         } else {
-            //Order order = DB4OUtils.readDeliveryOrder(dm.getDeliveryManUsername());
-            newOrder = DB4OUtils.readDeliveryOrder(dm.getDeliveryManUsername());
-            //System.out.println("NEWORDERRRRRRR" + newOrder.toString());
+            newOrder = DB4OUtils.rDOrder(dm.getDeliveryManUsername());
             txtCustomerName.setText(newOrder.get(0).getCustomer().getCustomerName());
             txtCustomerPhone.setText(newOrder.get(0).getCustomer().getCustomerContact() + "");
             txtCustomerAddress.setText(newOrder.get(0).getCustomer().getCustomerAddress());           
@@ -463,9 +462,9 @@ public class DeliveryManDashboard extends javax.swing.JFrame {
             txtRestaurantAddress.setText(newOrder.get(0).getRestaurant().getRestaurantAddress());
             txtRestaurantPhone.setText(newOrder.get(0).getRestaurant().getRestaurantNumber() + "");
             String dishesOrdered = "";
-            int totalPrice = 0;
+            double totalPrice = 0;
             for (int i = 0; i < newOrder.size(); i++) {
-                dishesOrdered += newOrder.get(i).getDish().getDishName() + ",";
+                dishesOrdered += newOrder.get(i).getDish().getDishName() + " ";
                 totalPrice += newOrder.get(i).getDish().getDishPrice();
             }
             txtOrderItems.setText(dishesOrdered);

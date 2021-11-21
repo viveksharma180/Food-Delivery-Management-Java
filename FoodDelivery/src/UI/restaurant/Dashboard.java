@@ -38,7 +38,7 @@ public class Dashboard extends javax.swing.JFrame {
     
     public Dashboard(RestaurantTemplate restaurant) {
         this.restaurant = restaurant;
-        dish = DB4OUtils.readDish(restaurant.getRestaurantUsername());
+        dish = DB4OUtils.rDish(restaurant.getRestaurantUsername());
         initComponents();
         displayLogo();
     }
@@ -349,15 +349,15 @@ public class Dashboard extends javax.swing.JFrame {
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
         
-        if (!DB4OUtils.validateName(txtDishName.getText())) {
+        if (!DB4OUtils.nameValidation(txtDishName.getText())) {
             JOptionPane.showMessageDialog(this, "Please enter a valid dish name.");
             return;
         }
-        if (!DB4OUtils.validateName(txtDescription.getText())) {
+        if (!DB4OUtils.nameValidation(txtDescription.getText())) {
             JOptionPane.showMessageDialog(this, "Please enter a valid dish summary.");
             return;
         }
-        if (!DB4OUtils.validateNumber(txtCost.getText()) || txtCost.getText().equals("")) {
+        if (!DB4OUtils.numberValidation(txtCost.getText()) || txtCost.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Please enter a valid dish price.");
             return;
         }
@@ -368,7 +368,7 @@ public class Dashboard extends javax.swing.JFrame {
             d.setDishSummary(txtDescription.getText());
             d.setDishPrice(Double.parseDouble(txtCost.getText()));
             dish.set(index, d);
-            DB4OUtils.writeDish(dish, restaurant.getRestaurantUsername());
+            DB4OUtils.wDish(dish, restaurant.getRestaurantUsername());
             JOptionPane.showMessageDialog(this, "Updated Succesfully.");
         }
         
@@ -385,7 +385,7 @@ public class Dashboard extends javax.swing.JFrame {
         
         if (index != -1) {
             dish.remove(index);
-            DB4OUtils.writeDish(dish, restaurant.getRestaurantUsername());
+            DB4OUtils.wDish(dish, restaurant.getRestaurantUsername());
             JOptionPane.showMessageDialog(this, "Dish Deleted Successfully");
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
@@ -408,7 +408,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-        if (!DB4OUtils.validateName(txtSearch.getText()) || txtSearch.getText().equals("")) {
+        if (!DB4OUtils.nameValidation(txtSearch.getText()) || txtSearch.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Please enter a valid dish name.");
             return;
         }
@@ -469,15 +469,15 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     private void validateFields() {
-        if (!DB4OUtils.validateName(txtDishName.getText())) {
+        if (!DB4OUtils.nameValidation(txtDishName.getText())) {
             JOptionPane.showMessageDialog(this, "Please enter a valid dish name.");
             return;
         }
-        if (!DB4OUtils.validateNameNumber(txtDescription.getText())) {
+        if (!DB4OUtils.StringIntValidation(txtDescription.getText())) {
             JOptionPane.showMessageDialog(this, "Please enter a valid dish summary.");
             return;
         }
-        if (!DB4OUtils.validateNumber(txtCost.getText())) {
+        if (!DB4OUtils.numberValidation(txtCost.getText())) {
             JOptionPane.showMessageDialog(this, "Please enter a valid dish price.");
             return;
         }
@@ -485,9 +485,9 @@ public class Dashboard extends javax.swing.JFrame {
     
     public void storeFields(){
         DishTemplate d = new DishTemplate(txtDishName.getText(), txtDescription.getText(), Double.parseDouble(txtCost.getText()));
-        ArrayList<DishTemplate> dish = DB4OUtils.readDish(restaurant.getRestaurantUsername());
+        ArrayList<DishTemplate> dish = DB4OUtils.rDish(restaurant.getRestaurantUsername());
         dish.add(d);
-        DB4OUtils.writeDish(dish, restaurant.getRestaurantUsername());
+        DB4OUtils.wDish(dish, restaurant.getRestaurantUsername());
         JOptionPane.showMessageDialog(this, "Dish Added succesfully!");
     }
     

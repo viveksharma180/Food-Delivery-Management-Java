@@ -1,16 +1,17 @@
 [
   {
     "dish": {
-      "dishName": "chickenwings",
-      "dishSummary": "chicken",
-      "dishPrice": 8.99
+      "dishName": "FootLong",
+      "dishSummary": "Sub",
+      "dishPrice": 5.99
     },
     "restaurant": {
-      "restaurantName": "Popeye",
-      "restaurantAddress": "Curry Center",
-      "restaurantNumber": 4040404040,
-      "restaurantUsername": "popeye",
-      "restaurantPassword": "popeye"
+      "restaurantName": "Subway",
+      "restaurantAddress": "Tremont Street, Boston, MA",
+      "restaurantNumber": 9876987698,
+      "restaurantCuisine": "Bakery",
+      "restaurantUsername": "subway",
+      "restaurantPassword": "subway"
     },
     "customer": {
       "customerName": "Raghav Kandpal",
@@ -22,16 +23,39 @@
   },
   {
     "dish": {
-      "dishName": "chickenwings",
-      "dishSummary": "chicken",
-      "dishPrice": 8.99
+      "dishName": "FootLong",
+      "dishSummary": "Sub",
+      "dishPrice": 5.99
     },
     "restaurant": {
-      "restaurantName": "Popeye",
-      "restaurantAddress": "Curry Center",
-      "restaurantNumber": 4040404040,
-      "restaurantUsername": "popeye",
-      "restaurantPassword": "popeye"
+      "restaurantName": "Subway",
+      "restaurantAddress": "Tremont Street, Boston, MA",
+      "restaurantNumber": 9876987698,
+      "restaurantCuisine": "Bakery",
+      "restaurantUsername": "subway",
+      "restaurantPassword": "subway"
+    },
+    "customer": {
+      "customerName": "Raghav Kandpal",
+      "customerAddress": "810 Tremont Street Boston MA",
+      "customerContact": 9897731487,
+      "customerUsername": "raghav",
+      "customerPassword": "kandpal"
+    }
+  },
+  {
+    "dish": {
+      "dishName": "FootLong",
+      "dishSummary": "Sub",
+      "dishPrice": 5.99
+    },
+    "restaurant": {
+      "restaurantName": "Subway",
+      "restaurantAddress": "Tremont Street, Boston, MA",
+      "restaurantNumber": 9876987698,
+      "restaurantCuisine": "Bakery",
+      "restaurantUsername": "subway",
+      "restaurantPassword": "subway"
     },
     "customer": {
       "customerName": "Raghav Kandpal",

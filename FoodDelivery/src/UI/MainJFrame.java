@@ -32,11 +32,11 @@ import templates.RestaurantTemplate;
  */
 public class MainJFrame extends javax.swing.JFrame {
 
-    private String adminUser = "vivek";
-     private String adminPass = "sharma";
-     private ArrayList<RestaurantTemplate> restaurantList = DB4OUtils.readRestaurants();
-     private ArrayList<DeliveryManTemplate> deliveryManList = DB4OUtils.readDeliveryMan();
-     private ArrayList<CustomerTemplate> customerList = DB4OUtils.readCustomer();
+    private String aUser = "vivek";
+     private String aPass = "sharma";
+     private ArrayList<RestaurantTemplate> rList = DB4OUtils.rRestaurants();
+     private ArrayList<DeliveryManTemplate> dMList = DB4OUtils.rDeliveryMan();
+     private ArrayList<CustomerTemplate> cList = DB4OUtils.rCustomer();
      Image Shortenedimg, Shortendimg1;
      BufferedImage bImage, bImage1;
     
@@ -262,12 +262,12 @@ public class MainJFrame extends javax.swing.JFrame {
         String username = txtUserName.getText();
         String password = txtPassword.getText();
         
-        for (RestaurantTemplate r: restaurantList) {
-            if (r.getRestaurantUsername().equals(username)) {
-                if (r.getRestaurantPassword().equals(password)) {
+        for (RestaurantTemplate eachRestaurant: rList) {
+            if (eachRestaurant.getRestaurantUsername().equals(username)) {
+                if (eachRestaurant.getRestaurantPassword().equals(password)) {
                     super.dispose();
-                    Dashboard restaurantListDashboard = new Dashboard(r);
-                    restaurantListDashboard.setVisible(true);
+                    Dashboard rListDashboard = new Dashboard(eachRestaurant);
+                    rListDashboard.setVisible(true);
                     JOptionPane.showMessageDialog(this, "Restaurant Login Successfull!");
                 } else {
                     JOptionPane.showMessageDialog(this, "Incorrect Username or Password!!!");
@@ -276,12 +276,12 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         }
         
-        for (CustomerTemplate c: customerList) {
-            if (c.getCustomerUsername().equals(username)) {
-                if (c.getCustomerPassword().equals(password)) {
+        for (CustomerTemplate eachCustomer: cList) {
+            if (eachCustomer.getCustomerUsername().equals(username)) {
+                if (eachCustomer.getCustomerPassword().equals(password)) {
                     super.dispose();
-                    CustomerDashboard customerListDash = new CustomerDashboard(c);
-                    customerListDash.setVisible(true);
+                    CustomerDashboard cListDash = new CustomerDashboard(eachCustomer);
+                    cListDash.setVisible(true);
                     JOptionPane.showMessageDialog(this, "Customer Login Successfull!");
                 } else {
                     JOptionPane.showMessageDialog(this, "Incorrect Username or Password!!!");
@@ -290,11 +290,11 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         }
         
-        for (DeliveryManTemplate d: deliveryManList) {
-            if (d.getDeliveryManUsername().equals(username)) {
-                if (d.getDeliveryManPassword().equals(password)) {
+        for (DeliveryManTemplate eachDeliverMan: dMList) {
+            if (eachDeliverMan.getDeliveryManUsername().equals(username)) {
+                if (eachDeliverMan.getDeliveryManPassword().equals(password)) {
                     super.dispose();
-                    DeliveryManDashboard DeliveryDashboard = new DeliveryManDashboard(d);
+                    DeliveryManDashboard DeliveryDashboard = new DeliveryManDashboard(eachDeliverMan);
                     DeliveryDashboard.setVisible(true);
                     JOptionPane.showMessageDialog(this, "Delivery Man Login Successfull!");
                 } else {
@@ -304,7 +304,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         }
         
-        if (adminUser.equals(username) && adminPass.equals(password)) {
+        if (aUser.equals(username) && aPass.equals(password)) {
             super.dispose();
             AdminMainDashboard adminDash = new AdminMainDashboard();
             adminDash.setVisible(true);

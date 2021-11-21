@@ -1,0 +1,12 @@
+[
+  {
+    "dishName": "Tortilla",
+    "dishSummary": "Tortillas",
+    "dishPrice": 4.99
+  },
+  {
+    "dishName": "Chicken Salad",
+    "dishSummary": "Chicken salad",
+    "dishPrice": 11.99
+  }
+]

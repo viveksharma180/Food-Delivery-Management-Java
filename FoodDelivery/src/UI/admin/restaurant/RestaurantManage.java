@@ -33,7 +33,7 @@ public class RestaurantManage extends javax.swing.JFrame {
      BufferedImage bImage, bImage1;
     
     public RestaurantManage() {
-        this.restaurant = DB4OUtils.readRestaurants();
+        this.restaurant = DB4OUtils.rRestaurants();
         initComponents();
         displayLogo();
     }
@@ -407,31 +407,31 @@ public class RestaurantManage extends javax.swing.JFrame {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
-        if (!DB4OUtils.validateName(txtRestaurantName.getText())) {
+        if (!DB4OUtils.nameValidation(txtRestaurantName.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a valid restaurant name.");
             return;
         }
-        if (!DB4OUtils.validateNameNumber(txtRestaurantAddress.getText())) {
+        if (!DB4OUtils.StringIntValidation(txtRestaurantAddress.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a valid address.");
             return;
         }
-        if (!DB4OUtils.validateNumber(txtRestaurantPhone.getText())) {
+        if (!DB4OUtils.numberValidation(txtRestaurantPhone.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a valid contact.");
             return;
         }
-        if (!DB4OUtils.validateNameNumber(txtUserName.getText())) {
+        if (!DB4OUtils.StringIntValidation(txtUserName.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a valid username.");
             return;
         }
-        if (!DB4OUtils.validateNameNumber(txtPassword.getText())) {
+        if (!DB4OUtils.StringIntValidation(txtPassword.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a valid password.");
             return;
         }
         RestaurantTemplate r = new RestaurantTemplate(txtRestaurantName.getText(), txtRestaurantAddress.getText(), Long.valueOf(txtRestaurantPhone.getText()), txtUserName.getText(), txtPassword.getText());
-        ArrayList<RestaurantTemplate> restaurants = DB4OUtils.readRestaurants();
+        ArrayList<RestaurantTemplate> restaurants = DB4OUtils.rRestaurants();
         System.out.println(restaurants.toString());
         restaurants.add(r);
-        DB4OUtils.writeRestaurants(restaurants);
+        DB4OUtils.wRestaurants(restaurants);
         JOptionPane.showMessageDialog(this, "Submitted succesfully!");
 //        super.dispose();
 //        RestaurantManage rm = new RestaurantManage();
@@ -444,7 +444,7 @@ public class RestaurantManage extends javax.swing.JFrame {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-        if (!DB4OUtils.validateNumber(txtSearch.getText()) || txtSearch.getText().equals("")) {
+        if (!DB4OUtils.numberValidation(txtSearch.getText()) || txtSearch.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Restaurant belonging to this Phone Number not found!");
             return;
         }
@@ -474,23 +474,23 @@ public class RestaurantManage extends javax.swing.JFrame {
 
     private void btnUpdateRestaurantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateRestaurantActionPerformed
         // TODO add your handling code here:
-        if (!DB4OUtils.validateName(txtRestaurantName.getText())) {
+        if (!DB4OUtils.nameValidation(txtRestaurantName.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a name.");
             return;
         }
-        if (!DB4OUtils.validateNameNumber(txtRestaurantAddress.getText())) {
+        if (!DB4OUtils.StringIntValidation(txtRestaurantAddress.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a address.");
             return;
         }
-        if (!DB4OUtils.validateNumber(txtRestaurantPhone.getText())) {
+        if (!DB4OUtils.numberValidation(txtRestaurantPhone.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a contact.");
             return;
         }       
-        if (!DB4OUtils.validateNameNumber(txtUserName.getText())) {
+        if (!DB4OUtils.StringIntValidation(txtUserName.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a username.");
             return;
         }
-        if (!DB4OUtils.validateNameNumber(txtPassword.getText())) {
+        if (!DB4OUtils.StringIntValidation(txtPassword.getText())) {
             JOptionPane.showMessageDialog(this, "Enter a password.");
             return;
         }
@@ -503,7 +503,7 @@ public class RestaurantManage extends javax.swing.JFrame {
             p.setRestaurantUsername(txtUserName.getText());
             p.setRestaurantPassword(txtPassword.getText());
             restaurant.set(index, p);
-            DB4OUtils.writeRestaurants(restaurant);
+            DB4OUtils.wRestaurants(restaurant);
             JOptionPane.showMessageDialog(this, "Updated!");
             }
 
@@ -522,10 +522,10 @@ public class RestaurantManage extends javax.swing.JFrame {
             }
             if (vitalIndex != -1) {
                 restaurant.remove(vitalIndex);
-                DB4OUtils.writeRestaurants(restaurant);
+                DB4OUtils.wRestaurants(restaurant);
             }
             restaurant.remove(index);
-            DB4OUtils.writeRestaurants(restaurant);
+            DB4OUtils.wRestaurants(restaurant);
             JOptionPane.showMessageDialog(this, "Deleted details of " +  p.getRestaurantName());
 //            super.dispose();
 //        RestaurantManage rm = new RestaurantManage();

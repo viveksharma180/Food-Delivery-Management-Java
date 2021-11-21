@@ -36,12 +36,12 @@ public class CustomerDashboard extends javax.swing.JFrame {
      */
     
     private CustomerTemplate customer;
-    private ArrayList<RestaurantTemplate> restaurant = DB4OUtils.readRestaurants();
+    private ArrayList<RestaurantTemplate> restaurant = DB4OUtils.rRestaurants();
     private RestaurantTemplate selectedRestaurant;
-    private ArrayList<DeliveryManTemplate> deliveryman = DB4OUtils.readDeliveryMan();
+    private ArrayList<DeliveryManTemplate> deliveryman = DB4OUtils.rDeliveryMan();
     private int i = -1;
     private ArrayList<DishTemplate> dish = new ArrayList<DishTemplate>();
-    int f = DB4OUtils.findFirstAvailableDeliveryMan(deliveryman);
+    int f = DB4OUtils.AvailableDeliveryMan(deliveryman);
     ArrayList<OrderTemplate> newOrder = new ArrayList<OrderTemplate>();
     Image Shortenedimg, Shortendimg1;
      BufferedImage bImage, bImage1;
@@ -463,7 +463,7 @@ public class CustomerDashboard extends javax.swing.JFrame {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-        if (!DB4OUtils.validateName(txtSearch.getText()) || txtSearch.getText().equals("")) {
+        if (!DB4OUtils.nameValidation(txtSearch.getText()) || txtSearch.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Enter valid name!");
             return;
         }
@@ -493,7 +493,7 @@ public class CustomerDashboard extends javax.swing.JFrame {
         if (f != -1) {
             deliveryman.get(f).setAvailable(false);
             JOptionPane.showMessageDialog(this, "Your order is with " + deliveryman.get(f).getDeliveryManName());
-            DB4OUtils.writeDeliveryMan(deliveryman);
+            DB4OUtils.wDeliveryMan(deliveryman);
 //            super.dispose();
 //            AppDashboard ad = new AppDashboard();
 //            ad.setVisible(true);
@@ -507,12 +507,12 @@ public class CustomerDashboard extends javax.swing.JFrame {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
-        if (!DB4OUtils.validateName(txtAddDish.getText())) {
+        if (!DB4OUtils.nameValidation(txtAddDish.getText())) {
             JOptionPane.showMessageDialog(this, "Please enter a valid dish name from the menu provided above.");
             return;
         }
         boolean found = false;
-        for (DishTemplate dish : DB4OUtils.readDish(selectedRestaurant.getRestaurantUsername())) {
+        for (DishTemplate dish : DB4OUtils.rDish(selectedRestaurant.getRestaurantUsername())) {
             if (dish.getDishName().contains(txtAddDish.getText())) {
                 found = true;
                 break;
@@ -522,7 +522,7 @@ public class CustomerDashboard extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Pleas enter a valid item!!!");
             return;
         }
-        if (DB4OUtils.findFirstAvailableDeliveryMan(deliveryman) == -1) {
+        if (DB4OUtils.AvailableDeliveryMan(deliveryman) == -1) {
             JOptionPane.showMessageDialog(this, "No Delivery man available right now!");
             return;
         }
@@ -544,7 +544,7 @@ public class CustomerDashboard extends javax.swing.JFrame {
 
         Object[] row = new Object[dtm.getColumnCount()];
 
-        for (DishTemplate dd : DB4OUtils.readDish(selectedRestaurant.getRestaurantUsername())) {
+        for (DishTemplate dd : DB4OUtils.rDish(selectedRestaurant.getRestaurantUsername())) {
             if (dd.getDishName().contains(txtAddDish.getText())) {
                 dish.add(dd);
             }
@@ -613,7 +613,7 @@ public class CustomerDashboard extends javax.swing.JFrame {
             tblMenu.getColumnModel().getColumn(x).setCellRenderer(centerRenderer);
         }
 
-        for (DishTemplate dish : DB4OUtils.readDish(r.getRestaurantUsername())) {
+        for (DishTemplate dish : DB4OUtils.rDish(r.getRestaurantUsername())) {
             Object[] row = new Object[dtm.getColumnCount()];
             row[0] = dish.getDishName();
             row[1] = dish.getDishSummary();
@@ -625,8 +625,7 @@ public class CustomerDashboard extends javax.swing.JFrame {
     private void placeNewOrder(String orderName) {
         OrderTemplate order = new OrderTemplate(dish.get(i), selectedRestaurant, customer);
         newOrder.add(order);
-        System.out.println("placeOrder" + newOrder.toString());
-        DB4OUtils.writeDeliveryOrder(newOrder, deliveryman.get(f).getDeliveryManUsername());
+        DB4OUtils.wDOrder(newOrder, deliveryman.get(f).getDeliveryManUsername());
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
